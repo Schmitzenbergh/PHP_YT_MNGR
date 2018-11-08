@@ -19,3 +19,7 @@ body{
     height: 600px;
 
 }
+
+table, tr, td{
+    border: black 1px solid;
+}

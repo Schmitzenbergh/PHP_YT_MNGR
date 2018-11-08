@@ -14,7 +14,6 @@
             if(file_exists(DATABASE_PATH) && (filesize(DATABASE_PATH) != 0))
             {
                 $ytMusicArray = file(DATABASE_PATH);
-                echo count($ytMusicArray);
                 if($id > 0 && ($id < count($ytMusicArray)))
                 {
                     $database = explode(";", $ytMusicArray[$id]);
