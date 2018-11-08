@@ -10,7 +10,7 @@
         {
             if(file_exists(DATABASE_PATH) && (filesize(DATABASE_PATH) != 0))
             {
-                $database = explode(";",file(DATABASE_PATH)[1]);
+                $database = explode(";",file(DATABASE_PATH)[$id]);
                 $artist = $database[0];
                 $title = $database[1];
                 $pbid = $database[2];
@@ -34,9 +34,10 @@
     <div id="main">
         <?php
             echo"<h1>". $artist ." - ". $title ."</h1>";
-        ?>
 
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/-tJYN-eG1zk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+            echo "<iframe src='https://www.youtube.com/embed/". $pbid ."' frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>";
+        ?>
     </div>
 </body>
 </html>

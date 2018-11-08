@@ -6,9 +6,16 @@ body{
 
 #main{
     margin: 0 auto;
-    width: 400px;
-    height: 800px;
+    width: 900px;
+    height: 700px;
     background-color: rgba(170, 170, 170, 0.9);
     border-radius: 25px;
     padding: 20px;
+    text-align: center;
+}
+
+#main > iframe{
+    width: 800px;
+    height: 600px;
+
 }
