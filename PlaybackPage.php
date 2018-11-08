@@ -1,5 +1,8 @@
 <?php
     CONST DATABASE_PATH = "database.csv";
+    $artist = "unknown";
+    $title = "unknown";
+    $ytIframe = "music not found";
     //Check if get is set
     if(isset($_GET["id"]))
     {
@@ -10,10 +13,18 @@
         {
             if(file_exists(DATABASE_PATH) && (filesize(DATABASE_PATH) != 0))
             {
-                $database = explode(";",file(DATABASE_PATH)[$id]);
-                $artist = $database[0];
-                $title = $database[1];
-                $pbid = $database[2];
+                $ytMusicArray = file(DATABASE_PATH);
+                echo count($ytMusicArray);
+                if($id > 0 && ($id < count($ytMusicArray)))
+                {
+                    $database = explode(";", $ytMusicArray[$id]);
+                    $artist = $database[0];
+                    $title = $database[1];
+                    $pbid = $database[2];
+
+                    $ytIframe = "<iframe src='https://www.youtube.com/embed/". $pbid ."' frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>";
+
+                }
             }
         }
 
@@ -34,9 +45,7 @@
     <div id="main">
         <?php
             echo"<h1>". $artist ." - ". $title ."</h1>";
-
-
-            echo "<iframe src='https://www.youtube.com/embed/". $pbid ."' frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>";
+            echo $ytIframe
         ?>
     </div>
 </body>
