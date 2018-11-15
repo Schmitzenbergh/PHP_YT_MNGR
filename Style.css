@@ -35,3 +35,22 @@ li{
     display: inline;
     list-style: none;
 }
+
+form{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+form > ul{
+    text-align: right;
+    padding-left: 5px;
+}
+
+form li{
+    display: list-item;
+}
+
+
+
+

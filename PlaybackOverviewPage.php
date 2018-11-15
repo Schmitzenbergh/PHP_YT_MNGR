@@ -9,7 +9,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Youtube Mngr - Playback</title>
+    <title>Youtube Mngr - Playback Overview</title>
     <meta charset="UTF-8">
     <link href="Style.css" rel="stylesheet" type="text/css">
 </head>
