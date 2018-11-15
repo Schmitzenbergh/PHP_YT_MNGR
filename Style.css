@@ -16,10 +16,22 @@ body{
 
 #main > iframe{
     width: 800px;
-    height: 600px;
+    height: 480px;
 
 }
+table{
+    margin: auto;
+}
 
-table, tr, td{
+table, tr, td, th{
     border: black 1px solid;
+}
+
+th{
+    text-decoration: underline;
+}
+
+li{
+    display: inline;
+    list-style: none;
 }
