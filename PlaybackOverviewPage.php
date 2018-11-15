@@ -15,31 +15,40 @@
 </head>
 <body>
 <div id="main">
-    <table>
-        <?php
-            for($y = 0; $y < count($ytMusicArray); $y++)
-            {
-                $song = explode(";", $ytMusicArray[$y]);
-                echo "<tr>";
-                    for($x = 0; $x < count($song); $x++)
-                    {
-                        echo "<td>";
-                        if($x >=2 && $y != 0)
+    <h1>SongOrganizer 2.0</h1>
+    <?php require_once("Menu_Inc.html");?>
+    <section id="overview">
+        <table>
+            <tr>
+                <th>Artist</th>
+                <th>Song</th>
+                <th>Playback</th>
+            </tr>
+            <?php
+                for($y = 1; $y < count($ytMusicArray); $y++)
+                {
+                    $song = explode(";", $ytMusicArray[$y]);
+                    echo "<tr>";
+                        for($x = 0; $x < count($song); $x++)
                         {
-                            echo "<a href='PlaybackPage.php?id=". $y . "'>&vrtri;</a>";
+                            echo "<td>";
+                            if($x >=2 && $y != 0)
+                            {
+                                echo "<a href='PlaybackPage.php?id=". $y . "'>Play song</a>";
 
-                        }else{
-                            echo $song[$x];
+                            }else{
+                                echo $song[$x];
+                            }
+                            echo "</td>";
+
+
                         }
-                        echo "</td>";
+                    echo "</tr>";
+                }
+            ?>
 
-
-                    }
-                echo "</tr>";
-            }
-        ?>
-
-    </table>
+        </table>
+    </section>
 
 </div>
 </body>
