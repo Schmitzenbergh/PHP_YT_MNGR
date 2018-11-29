@@ -69,6 +69,8 @@
 <body>
     <div id="main">
         <?php
+            //Import the data in "Menu_Inc.html", this data is required (As in, not found will give an error)
+            require_once("Menu_Inc.html");
             //Print the error messages if there are any
             if(isset($errorMsg)) {
                 foreach ($errorMsg as $msg)
@@ -79,8 +81,6 @@
 
             //Print the artist and title, they might still be default if the id was wrong
             echo"<h1>". $artist ." - ". $title ."</h1>";
-            //Import the data in "Menu_Inc.html", this data is required (As in, not found will give an error)
-            require_once("Menu_Inc.html");
             //Import the data in "Menu_Inc.html", this data is required (As in, not found will give an error)
             echo $ytIframe
         ?>
